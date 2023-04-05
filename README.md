@@ -1,3 +1,5 @@
+### Modification content
+*
 Remove the DNS-related registration logic.
 Fix the issue of not synchronizing the transfer of domain NFT ownership.
 Add 721Enumerable.
