@@ -30,12 +30,15 @@ npx hardhat test
 OWNER_KEY={{account private key}} INFURA_ID=c03713652e3c4ef6a3c09ea7dbf58711 npx hardhat deploy --network goerli (INFURA_ID可以替换成自己的infuraid，执行前删除deployment/goerli/.migrations.json)
 FORCE=true OWNER_KEY={{account private key}} INFURA_ID=c03713652e3c4ef6a3c09ea7dbf58711 npx hardhat deploy --network goerli （强制都重新deploy）
 ```
-如果只重新部署某个id的js，则从.migrations.json里去掉对应的id即可
+If you want to redeploy only a specific JavaScript file, you can remove the corresponding ID from the .migrations.json file.
 
-如果只重新部署某个合约，则从{{network}}_result.json里把对应address置空即可
+If you want to redeploy only a specific contract, you can set the corresponding address to null in the {{network}}_result.json file.
 
+Here is the result of deploying to a local network using the command
+```sh 
+npx hardhat deploy".
+```
 
-下面是执行本地网络部署的结果 `npx hardhat deploy`
 ```sh
 deployer network= hardhat
 
@@ -90,12 +93,11 @@ deploying "ETHRegistrarController" (tx: 0x3d3c7e3896e03206f4c969518597088002f3fe
 Domain: buidlerdao - Adding  controller as controller on registrar (tx: 0x2574349cbec760a0386577ab9ba35c3055eeb09cd58136c721cf3e7e8320ca64)...
 ControllerAdded= true
 ```
-本地deploy没有报错，就可以尝试部署其他网络，见 hardhat.config.js的network配置
+If local deployment is successful without any errors, you can attempt to deploy to other networks by configuring the network settings in hardhat.config.js.
 
-### 部署测试网goerli后，执行注册脚本 ens.js
+After deploying to the test network goerli, you can run the registration script ens.js.
 
 ```sh
 OWNKEY={{account private key}} INFURA=https://eth-goerli.alchemyapi.io/v2/GlaeWuylnNM3uuOo-SAwJxuwTdqHaY5l  node ens.js
 ```
-就可以去opensea测试网查看了,比如我部署的：https://testnets.opensea.io/collection/buildlerdao-name-service
 
