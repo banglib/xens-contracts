@@ -1,16 +1,13 @@
-
-### 修改内容
-* 去除dns相关的注册逻辑
-* 修复域名NFT转移owner没有同步转移的问题
-* 增加721Enumrable
-* 改造tokenURI为链上svg的形式
-* 修复零宽问题
-* 增加保留字到stableLogicControl.sol里
-* 为方便部署体验注册功能，去除价格预言机，改成固定价格，如有需要则可部署StableLogicControl设置价格
-* 【todo】如果想实现正向注册器合约BaseRegistrarImplementation可升级，可以用BaseRegistrarImplementationUpgradeable按照@openzeppelin/contracts-upgradeable规范自行修改验证
-
-### 前置工作
-* 修改constant/index.js的域名配置改成自己想部署的域名信息
+Remove the DNS-related registration logic.
+Fix the issue of not synchronizing the transfer of domain NFT ownership.
+Add 721Enumerable.
+Transform tokenURI into on-chain SVG form.
+Fix the issue of zero-width.
+Add reserved words to stableLogicControl.sol.
+For the convenience of deployment and registration, remove the price oracle and set a fixed price. If necessary, StableLogicControl can be deployed to set the price.
+[TODO] If you want to implement the forward registrar contract BaseRegistrarImplementation can be upgraded. You can use BaseRegistrarImplementationUpgradeable to modify and verify according to the @openzeppelin/contracts-upgradeable specification by yourself.
+Prerequisite:
+Modify the domain configuration in constant/index.js to the domain information you want to deploy.
 * 
 ``` js
 {
